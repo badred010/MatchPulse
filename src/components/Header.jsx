@@ -43,22 +43,23 @@ export default function Header({ searchTerm, onSearchChange }) {
     </button>
   </div>
 </div>
+{/* Modern Search with icon outside */}
+<div className="flex w-full md:max-w-2xl mt-4 gap-2">
+  {/* Search Input */}
+  <input
+    type="text"
+    placeholder="Team, Liga oder Spiel suchen..."
+    value={searchTerm}
+    onChange={(e) => onSearchChange(e.target.value)}
+    className="flex-1 py-3 md:py-4 px-5 bg-background/60 border border-border/40 rounded-3xl shadow-md focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 placeholder:text-muted-foreground/60 text-base md:text-lg transition-all duration-300 backdrop-blur-sm hover:bg-background/70"
+  />
 
-          {/* Search */}
-          <div className="relative w-full md:max-w-2xl mt-4">
-            <div className="flex items-center">
-              <div className="absolute left-4 flex items-center h-full pointer-events-none">
-                <Search className="h-4 w-4 md:h-5 md:w-5 text-muted-foreground/60" />
-              </div>
-              <input
-                type="text"
-                placeholder="Team, Liga oder Spiel suchen..."
-                value={searchTerm}
-                onChange={(e) => onSearchChange(e.target.value)}
-                className="w-full pl-12 pr-4 py-2.5 md:py-3 bg-background/50 border border-border/50 rounded-2xl focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/30 placeholder:text-muted-foreground/70 text-sm md:text-base transition-all duration-200 backdrop-blur-sm shadow-inner hover:bg-background/70"
-              />
-            </div>
-          </div>
+  {/* Search Icon */}
+  <button className="flex items-center justify-center w-12 md:w-14 h-12 md:h-14 bg-primary/80 text-background rounded-2xl shadow-md hover:bg-primary transition-all duration-300">
+    <Search className="w-5 h-5 md:w-6 md:h-6" />
+  </button>
+</div>
+
         </div>
       </div>
     </header>

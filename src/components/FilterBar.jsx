@@ -1,5 +1,5 @@
 /**
- * Filter bar component for league selection and live toggle
+ * Modern FilterBar component
  */
 export default function FilterBar({ selectedLeague, onLeagueChange, showLiveOnly, onLiveToggle }) {
   const leagues = [
@@ -12,41 +12,43 @@ export default function FilterBar({ selectedLeague, onLeagueChange, showLiveOnly
   ];
 
   return (
-    <div className="bg-card border-b border-border">
-      <div className="container mx-auto px-4 py-4">
-        <div className="flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
-          {/* League filters */}
-          <div className="flex flex-wrap gap-2">
-            {leagues.map(league => (
-              <button
-                key={league.id}
-                onClick={() => onLeagueChange(league.id)}
-                className={`filter-btn ${
-                  selectedLeague === league.id 
-                    ? 'filter-btn-active' 
-                    : 'filter-btn-inactive'
-                }`}
-              >
-                {league.name}
-              </button>
-            ))}
-          </div>
-
-          {/* Live toggle */}
-          <button
-            onClick={onLiveToggle}
-            className={`filter-btn whitespace-nowrap ${
-              showLiveOnly 
-                ? 'bg-live text-live-foreground shadow-md' 
-                : 'filter-btn-inactive'
-            }`}
-          >
-            <span className="flex items-center gap-2">
-              {showLiveOnly && <span className="live-dot"></span>}
-              Nur Live
-            </span>
-          </button>
+    <div className="bg-background/70 backdrop-blur-md border-b border-border/40 shadow-sm">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col lg:flex-row gap-4 items-start lg:items-center justify-between">
+        
+        {/* League Filters */}
+        <div className="flex flex-wrap gap-3">
+          {leagues.map(league => (
+            <button
+              key={league.id}
+              onClick={() => onLeagueChange(league.id)}
+              className={`
+                px-4 py-2 rounded-full text-sm md:text-base font-medium transition-all duration-200
+                ${selectedLeague === league.id 
+                  ? 'bg-primary text-background shadow-md hover:scale-105' 
+                  : 'bg-background/50 text-muted-foreground hover:bg-background/70'}
+              `}
+            >
+              {league.name}
+            </button>
+          ))}
         </div>
+
+        {/* Live Toggle */}
+        <button
+          onClick={onLiveToggle}
+          className={`
+            flex items-center gap-2 px-4 py-2 rounded-full text-sm md:text-base font-medium transition-all duration-200
+            ${showLiveOnly 
+              ? 'bg-red-500 text-background shadow-md hover:scale-105' 
+              : 'bg-background/50 text-muted-foreground hover:bg-background/70'}
+          `}
+        >
+          {showLiveOnly && (
+            <span className="w-2.5 h-2.5 bg-red-500 rounded-full animate-pulse shadow-sm"></span>
+          )}
+          Nur Live
+        </button>
+
       </div>
     </div>
   );

@@ -17,13 +17,13 @@ Ein moderner, responsiver Fußball-Spielstand-Tracker für die Top 5 europäisch
 
 ### Voraussetzungen
 - Node.js (Version 16 oder höher)
-- npm oder yarn
+- npm
 
 ### Installation & Start
 
 ```bash
 # Repository klonen
-git clone <repository-url>
+git clone <https://github.com/badred010/MatchPulse>
 cd matchpulse
 
 # Abhängigkeiten installieren
@@ -42,6 +42,7 @@ matchpulse/
 ├── src/
 │   ├── components/          # React-Komponenten
 │   │   ├── Header.jsx       # Kopfzeile mit Suche
+│   │   ├── Easter.jsx       # Klein Easter spiel
 │   │   ├── FilterBar.jsx    # Liga-Filter und Live-Toggle
 │   │   ├── MatchCard.jsx    # Einzelne Spielkarte
 │   │   ├── MatchesGrid.jsx  # Grid-Layout für Spiele
@@ -63,25 +64,17 @@ matchpulse/
 
 MatchPulse nutzt ein sport-inspiriertes Design System mit:
 - **Primary**: Kräftiges Blau für Haupt-Elemente
-- **Live**: Lebendiges Grün für Live-Spiele
+- **Live**: Lebendiges Rot für Live-Spiele
 - **Alert**: Warmes Orange für Highlights
 - **Cards**: Sanfte Schatten und Hover-Effekte
 - **Animationen**: Pulse-Effekte für Live-Badges
 
 Alle Farben und Styles sind in `src/index.css` definiert und nutzen CSS-Variablen für konsistentes Theming.
 
-## 🔌 API-Integration (Optional)
+## 🔌 API-Integration (In Arbeit...)
 
-Standardmäßig verwendet MatchPulse simulierte Daten. Für echte Live-Daten:
+Standardmäßig verwendet MatchPulse simulierte Daten. Echte Live-Daten folgen bald!
 
-1. Registriere dich bei [API-Football](https://www.api-football.com/)
-2. Erstelle eine `.env`-Datei:
-   ```
-   VITE_FOOTBALL_API_KEY=dein_api_key_hier
-   ```
-3. Implementiere die Fetch-Logik in `src/hooks/useMatches.js`
-
-**Hinweis**: Die API-Integration ist als separate Feature geplant und aktuell nicht implementiert.
 
 ## 🧪 Manuelle Tests
 
@@ -123,14 +116,6 @@ Erstellt optimierte Dateien im `dist/` Ordner.
    - Build Command: `npm run build`
    - Output Directory: `dist`
 
-3. **Umgebungsvariablen** (optional für API):
-   - In Vercel-Projekt-Settings
-   - `VITE_FOOTBALL_API_KEY` hinzufügen
-
-### Andere Plattformen
-- **Netlify**: Drag & Drop des `dist/` Ordners
-- **GitHub Pages**: Mit `gh-pages` Package
-- **Cloudflare Pages**: GitHub-Integration
 
 ## 🛠 Entwicklung
 
@@ -138,11 +123,10 @@ Erstellt optimierte Dateien im `dist/` Ordner.
 - `npm run dev` - Entwicklungsserver mit Hot Reload
 - `npm run build` - Production Build
 - `npm run preview` - Preview des Production Builds
-- `npm run lint` - Code-Linting (optional)
 
 ### Code-Konventionen
 - Functional Components mit Hooks
-- PropTypes für Type-Checking (optional)
+- PropTypes für Type-Checking
 - Komponenten-Kommentare auf Englisch
 - UI-Text auf Deutsch
 - Tailwind für alle Styles
@@ -151,19 +135,6 @@ Erstellt optimierte Dateien im `dist/` Ordner.
 
 Vorschläge und Pull Requests sind willkommen!
 
-### Commit-Vorschläge
-```
-feat: Initial project setup with React + Tailwind
-feat: Add design system and color tokens
-feat: Create Header and FilterBar components
-feat: Implement MatchCard and MatchesGrid
-feat: Add match detail modal
-feat: Implement mock data with live simulation
-feat: Add search and filter functionality
-docs: Add comprehensive README
-style: Add animations and hover effects
-refactor: Optimize component structure
-```
 
 ## 📝 Lizenz
 
@@ -181,9 +152,5 @@ npm install
 npm run dev
 ```
 
-### Deploy
-Ready for Vercel, Netlify, or any static hosting platform.
-
----
 
 **Entwickelt mit ❤️ für Fußball-Fans**

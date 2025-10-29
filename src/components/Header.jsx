@@ -20,8 +20,7 @@ export default function Header({ searchTerm, onSearchChange }) {
             </div>
             <div>
               <h1 className="text-xl md:text-2xl font-bold text-foreground tracking-tight">
-                Match<span className="text-primary" style={{ animation: 'pulse 1.2s ease-in-out infinite' }}
->Pulse</span>
+                Match<span className="text-primary" style={{ animation: 'pulse 1.2s ease-in-out infinite' }}>Pulse</span>
               </h1>
               <p className="text-xs text-muted-foreground mt-0.5 hidden sm:block">
                 Live Fußball-Ergebnisse & Stats

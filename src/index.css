@@ -2,172 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
-/* MatchPulse Design System - Sports Theme */
-
 @layer base {
   :root {
-    /* Backgrounds */
-    --background: 210 20% 98%;
-    --foreground: 222 47% 11%;
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
 
-    /* Cards with subtle elevation */
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 240 10% 3.9%;
 
-    /* Primary - Bold Sports Blue */
-    --primary: 217 91% 60%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --primary: 220 90% 56%;
     --primary-foreground: 0 0% 100%;
 
-    /* Live - Vibrant Green */
-    --live: 142 76% 36%;
-    --live-foreground: 0 0% 100%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
 
-    /* Alert - Bold Orange */
-    --alert: 25 95% 53%;
-    --alert-foreground: 0 0% 100%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5% 64%;
 
-    /* Secondary - Muted Blue */
-    --secondary: 214 32% 91%;
-    --secondary-foreground: 222 47% 11%;
+    --live: 0 84% 60%;
+    --alert: 45 100% 50%;
 
-    /* Muted elements */
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-
-    /* Accent */
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
-
-    /* Destructive */
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
-
-    /* Borders & inputs */
-    --border: 214 32% 88%;
-    --input: 214 32% 91%;
-    --ring: 217 91% 60%;
-
-    /* Radius */
     --radius: 0.75rem;
-
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 50%));
-    --gradient-live: linear-gradient(135deg, hsl(142 76% 36%), hsl(142 76% 46%));
-    --gradient-card: linear-gradient(to bottom, hsl(0 0% 100%), hsl(210 20% 99%));
-
-    /* Shadows */
-    --shadow-card: 0 2px 8px hsla(217 91% 60% / 0.08);
-    --shadow-card-hover: 0 8px 24px hsla(217 91% 60% / 0.15);
-    --shadow-live: 0 0 20px hsla(142 76% 36% / 0.3);
   }
 
   .dark {
-    --background: 222 47% 11%;
-    --foreground: 210 40% 98%;
-
-    --card: 217 33% 17%;
-    --card-foreground: 210 40% 98%;
-
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
-
-    --live: 142 76% 36%;
-    --live-foreground: 0 0% 100%;
-
-    --alert: 25 95% 53%;
-    --alert-foreground: 0 0% 100%;
-
-    --secondary: 217 33% 20%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 217 91% 60%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 63% 31%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217 33% 20%;
-    --input: 217 33% 20%;
-    --ring: 217 91% 60%;
-
-    --gradient-card: linear-gradient(to bottom, hsl(217 33% 17%), hsl(217 33% 15%));
-    --shadow-card: 0 2px 8px hsla(0 0% 0% / 0.3);
-    --shadow-card-hover: 0 8px 24px hsla(0 0% 0% / 0.5);
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 100%;
+    --card: 240 10% 4.2%;
+    --card-foreground: 0 0% 100%;
+    --muted: 240 5% 16%;
+    --muted-foreground: 240 4% 70%;
   }
 
   body {
-    @apply bg-background text-foreground font-sans antialiased;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
-  }
-}
-
-@layer components {
-  /* Match Card Styles */
-  .match-card {
-    @apply bg-card rounded-[var(--radius)] p-6 transition-all duration-300;
-    background: var(--gradient-card);
-    box-shadow: var(--shadow-card);
-  }
-
-  .match-card:hover {
-    @apply -translate-y-1;
-    box-shadow: var(--shadow-card-hover);
-  }
-
-  /* Live Badge Animation */
-  .live-badge {
-    @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-semibold;
-    background: var(--gradient-live);
-    color: hsl(var(--live-foreground));
-    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  .live-dot {
-    @apply w-2 h-2 rounded-full bg-white;
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  /* Filter Button Styles */
-  .filter-btn {
-    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
-  }
-
-  .filter-btn-active {
-    @apply bg-primary text-primary-foreground shadow-md;
-  }
-
-  .filter-btn-inactive {
-    @apply bg-secondary text-secondary-foreground hover:bg-secondary/80;
-  }
-
-  /* Search Input */
-  .search-input {
-    @apply w-full px-4 py-3 rounded-lg border-2 border-input bg-card;
-    @apply focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent;
-    @apply transition-all duration-200;
-  }
-}
-
-@layer utilities {
-  /* Custom animations */
-  @keyframes pulse-glow {
-    0%, 100% {
-      box-shadow: 0 0 20px hsla(142 76% 36% / 0.3);
-    }
-    50% {
-      box-shadow: 0 0 30px hsla(142 76% 36% / 0.6);
-    }
+    @apply bg-background text-foreground;
   }
 }

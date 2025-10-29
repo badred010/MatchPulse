@@ -1,5 +1,7 @@
 import MatchCard from './MatchCard'
 import { motion } from 'framer-motion'
+import Easter from './Easter'
+
 
 export default function MatchesGrid({ matches, onMatchClick }) {
   if (matches.length === 0) {
@@ -21,14 +23,12 @@ export default function MatchesGrid({ matches, onMatchClick }) {
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-3xl font-bold text-white tracking-tight flex items-center gap-3">
             <span className="inline-block w-1.5 h-8 bg-gradient-to-b from-emerald-400 to-cyan-400 rounded-full"></span>
-            Live Spiele
+            Live Spiele 
             <span className="ml-4 text-sm font-medium bg-red-500/20 text-red-400 px-4 py-1.5 rounded-full">
               {matches.length} {matches.length === 1 ? 'Spiel' : 'Spiele'}
             </span>
           </h2>
-          <button className="hidden sm:inline-flex bg-gradient-to-r from-cyan-500 to-emerald-500 text-white px-5 py-2 rounded-xl font-semibold hover:from-cyan-600 hover:to-emerald-600 transition-all duration-300 shadow-md hover:shadow-lg">
-            Filter ⚙️
-          </button>
+    <Easter />
         </div>
 
         {/* Modern Grid */}

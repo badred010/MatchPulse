@@ -34,7 +34,7 @@ export default function Footer() {
             🎯 Demo-Modus aktiv - Verwendet simulierte Daten mit Live-Updates
           </p>
           <p className="mt-1">
-            Für echte API-Integration siehe README.md
+            ⚡ API-Integration in Arbeit - Echte Live-Daten folgen bald!
           </p>
         </div>
       </div>

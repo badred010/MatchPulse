@@ -1,5 +1,15 @@
-// Mock match data for MatchPulse
-// Simulates matches from top 5 European leagues
+export interface Match {
+  id: string;
+  league: string;
+  homeTeam: string;
+  awayTeam: string;
+  homeScore: number | null;
+  awayScore: number | null;
+  status: 'SCHEDULED' | 'LIVE' | 'ENDED';
+  minute: number;
+  date: string;
+}
+
 
 export const mockMatches = [
   // Bundesliga - Live matches
@@ -8,10 +18,10 @@ export const mockMatches = [
     league: "Bundesliga",
     homeTeam: "Bayern München",
     awayTeam: "Borussia Dortmund",
-    homeScore: 2,
-    awayScore: 1,
+    homeScore: 0,
+    awayScore: 0,
     status: "LIVE",
-    minute: 67,
+    minute: 1,
     date: new Date().toISOString(),
     competition: "Bundesliga - Spieltag 24"
   },
@@ -227,23 +237,34 @@ export const mockMatches = [
   }
 ];
 
-// Function to simulate live score updates
-export function getUpdatedMatches(matches) {
+// Helper: simulate goals realistically
+const incrementScore = (score: number) => {
+  const chance = Math.random();
+  // ~5% chance per tick for a goal
+  if (chance < 0.05) return score + 1;
+  return score;
+};
+
+// Update matches for demo
+export function getUpdatedMatches(matches: Match[]): Match[] {
   return matches.map(match => {
-    if (match.status === "LIVE" && Math.random() > 0.7) {
-      // 30% chance of score update for live matches
-      const scoreHome = match.homeScore + (Math.random() > 0.5 ? 1 : 0);
-      const scoreAway = match.awayScore + (Math.random() > 0.5 ? 1 : 0);
-      const minute = Math.min(match.minute + Math.floor(Math.random() * 3), 90);
-      
-      return {
-        ...match,
-        homeScore: scoreHome,
-        awayScore: scoreAway,
-        minute: minute,
-        status: minute >= 90 ? "ENDED" : "LIVE"
-      };
+    if (match.status !== 'LIVE') return match;
+
+    let { homeScore, awayScore, minute } = match;
+
+    // Increment simulated minutes (1 tick = 1 minute)
+    minute += 1;
+
+    // Only allow goals every few minutes realistically
+    homeScore = incrementScore(homeScore ?? 0);
+    awayScore = incrementScore(awayScore ?? 0);
+
+    // End match at 90 minutes
+    const status = minute >= 90 ? 'ENDED' : 'LIVE';
+    if (status === 'ENDED') {
+      minute = 90;
     }
-    return match;
+
+    return { ...match, homeScore, awayScore, minute, status };
   });
 }

@@ -6,7 +6,7 @@ export default function Easter() {
 
   const handleClick = () => {
     setBounce(true);
-    setTimeout(() => setBounce(false), 800); // slightly longer for multiple bounces
+    setTimeout(() => setBounce(false), 800);
   };
 
   return (

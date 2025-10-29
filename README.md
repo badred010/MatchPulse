@@ -2,7 +2,7 @@
 
 Ein moderner, responsiver Fußball-Spielstand-Tracker für die Top 5 europäischen Ligen.
 
-![MatchPulse Demo](https://match-pulse-rho.vercel.app/)
+MatchPulse : (https://match-pulse-rho.vercel.app/)
 
 ## 🌟 Features
 

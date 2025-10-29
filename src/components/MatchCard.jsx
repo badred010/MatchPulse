@@ -1,8 +1,5 @@
 import { Clock, Calendar, Trophy, Users, Shield, ShieldHalf } from 'lucide-react';
 
-/**
- * Modern match card component with enhanced visual design
- */
 export default function MatchCard({ match, onClick }) {
   const formatTime = (dateString) => {
     const date = new Date(dateString);

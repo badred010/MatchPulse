@@ -70,12 +70,12 @@ export const mockMatches = [
     league: "La Liga",
     homeTeam: "Real Madrid",
     awayTeam: "FC Barcelona",
-    homeScore: 2,
-    awayScore: 3,
-    status: "ENDED",
-    minute: 90,
+    homeScore: 0,
+    awayScore: 4,
+    status: "LIVE",
+    minute: 45,
     date: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
-    competition: "La Liga - Jornada 26"
+    competition: "La Liga - Jornada 12"
   },
   {
     id: 6,

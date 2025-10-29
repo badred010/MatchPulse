@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import { mockMatches } from '../data/mockMatches.ts';
 
-/**
- * Simulates realistic live updates for demo purposes
- */
+
 function getUpdatedMatches(prevMatches) {
   return prevMatches.map(match => {
     if (match.status !== 'LIVE') return match;
@@ -25,10 +23,6 @@ function getUpdatedMatches(prevMatches) {
   });
 }
 
-/**
- * Custom hook to fetch and manage match data
- * Uses mock data with simulated live updates
- */
 export function useMatches() {
   const [matches, setMatches] = useState(mockMatches);
   const [loading, setLoading] = useState(true);

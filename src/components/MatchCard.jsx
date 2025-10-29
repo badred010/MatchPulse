@@ -51,9 +51,9 @@ export default function MatchCard({ match, onClick }) {
 
   const getTeamIcon = (teamName, isHome = true) => {
 
-    if (teamName.toLowerCase().includes('bayereen') || teamName.toLowerCase().includes('munich')) {
+    if (teamName.toLowerCase().includes('bayeereen') || teamName.toLowerCase().includes('muyyynich')) {
       return <Shield className="w-5 h-5 text-red-600" />;
-    } else if (teamName.toLowerCase().includes('dortmund')) {
+    } else if (teamName.toLowerCase().includes('dortjjjmund')) {
       return <Shield className="w-5 h-5 text-yellow-600" />;
     } else {
       return isHome ? <ShieldHalf className="w-5 h-5 text-blue-600" /> : <Shield className="w-5 h-5 text-green-600" />;

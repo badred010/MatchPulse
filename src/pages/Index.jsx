@@ -6,9 +6,7 @@ import MatchModal from '../components/MatchModal';
 import Footer from '../components/Footer';
 import { useMatches } from '../hooks/useMatches';
 
-/**
- * Main page component for MatchPulse
- */
+
 export default function Index() {
   const { matches, loading, error } = useMatches();
   const [searchTerm, setSearchTerm] = useState('');
@@ -16,7 +14,7 @@ export default function Index() {
   const [showLiveOnly, setShowLiveOnly] = useState(false);
   const [selectedMatch, setSelectedMatch] = useState(null);
 
-  // Filter matches based on search, league, and live status
+  // Filter matches
   const filteredMatches = useMemo(() => {
     return matches.filter(match => {
       // Search filter
@@ -42,7 +40,7 @@ export default function Index() {
     });
   }, [matches, searchTerm, selectedLeague, showLiveOnly]);
 
-  // Group matches by status for better organization
+  // Group matches by status
   const sortedMatches = useMemo(() => {
     return [...filteredMatches].sort((a, b) => {
       const statusOrder = { LIVE: 0, SCHEDULED: 1, ENDED: 2 };

@@ -1,6 +1,3 @@
-/**
- * Modern FilterBar component
- */
 export default function FilterBar({ selectedLeague, onLeagueChange, showLiveOnly, onLiveToggle }) {
   const leagues = [
     { id: 'all', name: 'Alle Ligen' },

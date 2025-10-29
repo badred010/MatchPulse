@@ -1,8 +1,6 @@
 import { Github, Heart } from 'lucide-react';
 
-/**
- * Footer component with credits and links
- */
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 

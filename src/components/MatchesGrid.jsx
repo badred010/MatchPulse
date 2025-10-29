@@ -51,7 +51,7 @@ export default function MatchesGrid({ matches, onMatchClick }) {
         {matches.length >= 12 && (
           <div className="mt-16 text-center">
             <button className="relative bg-gradient-to-r from-emerald-500 to-cyan-500 text-white px-10 py-4 rounded-2xl font-semibold shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 hover:scale-105">
-              Mehr Spiele laden
+              Mehr Spiele laden...
               <span className="absolute inset-0 rounded-2xl bg-white/10 blur opacity-0 hover:opacity-20 transition-all"></span>
             </button>
           </div>
